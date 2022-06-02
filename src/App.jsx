@@ -1,29 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
-import { Link } from 'react-router-dom';
+import {Link, Routes, Route} from "react-router-dom"
+import '../src/App.css'
+import Beranda from "./pages/Beranda"
+import About from "./pages/About"
+import Contact from "./pages/Contact"
 
 function App() {
   return (
-    <div className="flex justify-center p-6 w-screen h-screen bg-gray-200 overflow-y-auto">
-      <div className="max-w-md">
-        <div className="flex items-center justify-center mb-4 text-xs text-blue-600 font-semibold uppercase tracking-wide">
-          <Link
-          className="mx-2 px-4 py-2 rounded-xl hover-bg-gray-100 transition-all ease-in-out"
-          to="/home">
-            Home
-          </Link>
-
-          <Link
-          className="mx-2 px-4 py-2 rounded-xl hover-bg-gray-100 transition-all ease-in-out"
-          to="/home">
-            About
-          </Link>
-
-          <Link
-          className="mx-2 px-4 py-2 rounded-xl hover-bg-gray-100 transition-all ease-in-out"
-          to="/home">
-            Me
-          </Link>
+    <div className="">
+      <div className="min-h-screen bg-gray-200">
+        <div className="bg-sky-500 px-6 py-2 shadow-lg font-bold text-black" align="center">
+          <Link className="mx-2 px-4 py-2 rounded-xl hover:bg-sky-200 hover:text-sky-1000 transition-all ease-in-out" to= "/">Beranda</Link>
+          <Link className="mx-2 px-4 py-2 rounded-xl hover:bg-sky-200 hover:text-sky-1000 transition-all ease-in-out" to= "/About">Gallery</Link>
+          <Link className="mx-2 px-4 py-2 rounded-xl hover:bg-sky-200 hover:text-sky-1000 transition-all ease-in-out" to= "/Contact">Hari Besar</Link>
+        </div>
+        <div className="mx-12 px-8 py-6 bg-white shadow">
+          <Routes>
+            <Route path="/" element={<Beranda />}></Route>
+            <Route path="/About" element={<About />}></Route>
+            <Route path="/Contact" element={<Contact />}></Route>
+          </Routes>
         </div>
       </div>
     </div>
